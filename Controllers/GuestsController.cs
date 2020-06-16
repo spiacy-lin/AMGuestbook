@@ -54,7 +54,7 @@ namespace AMGuestbook.Controllers
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Title,CurrentDate,CurrentText,Name")] Guest guest)
+        public async Task<IActionResult> Create([Bind("Id,Title,CurrentDate,CurrentText,Name,Email")] Guest guest)
         {
             if (ModelState.IsValid)
             {
@@ -86,7 +86,7 @@ namespace AMGuestbook.Controllers
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Title,CurrentDate,CurrentText,Name")] Guest guest)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Title,CurrentDate,CurrentText,Name,Email")] Guest guest)
         {
             if (id != guest.Id)
             {
