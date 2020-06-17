@@ -1,25 +1,27 @@
 ﻿@model IEnumerable<AMGuestbook.Models.Guest>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Guestbook";
 }
-
+ 
 <h1>My Guest Book</h1>
 
 <h3>
     <a asp-action="Create">Create New</a>
 </h3>
 <em>===============================</em>
-@foreach (var item in Model) {
-       
-<h3> @Html.DisplayFor(modelItem => item.Title) </h3>
-<p>  @Html.DisplayFor(modelItem => item.CurrentText)</p>
-<p> @Html.DisplayFor(modelItem => item.Name)</p>
-        
-            <td>
-               <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
-            </td>
-      <hr />
-}
-    
+<div class="scroll" >
+    @foreach (var item in Model)
+    {
+
+        <h3> @Html.DisplayFor(modelItem => item.Title) </h3>
+        <p>  @Html.DisplayFor(modelItem => item.CurrentText)</p>
+        <p> @Html.DisplayFor(modelItem => item.Name)</p>
+
+        <p>
+            <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+            <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+        </p>
+        <hr />
+    }
+</div>
