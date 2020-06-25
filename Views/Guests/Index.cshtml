@@ -5,10 +5,10 @@
 }
  
 <h1>My ("Śpiący Lin") Guest Book</h1>
-
 <h3>
-   Comments:
+    <a asp-action="Create">Your comments</a>
 </h3>
+
 <div class="scroll" >
     @foreach (var item in Model)
     {
@@ -24,6 +24,3 @@
         <hr />
     }
 </div>
-<h3>
-    <a asp-action="Create">Your comments</a>
-</h3>
